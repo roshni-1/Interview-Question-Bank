@@ -363,7 +363,7 @@ Useful for evaluating binary classifiers, especially with imbalanced datasets.
   - Combines L1 and L2 regularization.
   - Use when you expect some irrelevant features but still need smooth regularization.
 
-
+ 
 
  **Q30** **What are ensemble methods, and why do they work?**
 **Ans**:  
