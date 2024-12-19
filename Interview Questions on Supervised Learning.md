@@ -106,13 +106,13 @@ These techniques help create simpler models with better generalization to unseen
 **Ans:**
 - **Purpose**: Used for binary classification problems (yes/no, 0/1).
 - **Model**: It predicts the probability of a data point belonging to a particular class using the logistic function (sigmoid):
-  $$
+  $
   P(y=1|X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 X_1 + \dots + \beta_n X_n)}}
-  $$
+  $
 - **Loss Function**: The loss function is **Log-Loss** (cross-entropy):
-  $$
+  $
   \text{Log-Loss} = - \frac{1}{n} \sum_{i=1}^{n} \left[ y_i \log(\hat{y_i}) + (1 - y_i) \log(1 - \hat{y_i}) \right]
-  $$
+  $
 - **Optimization**: Gradient Descent is used to minimize the log-loss.
 
 **Q12** **Explain Linear Regression**  
