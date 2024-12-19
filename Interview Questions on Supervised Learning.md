@@ -76,10 +76,10 @@ Cross-validation is important because it helps mitigate overfitting by providing
 
  From the confusion matrix, several performance metrics can be derived, such as:
 
-- **Accuracy:** ( 𝑇 𝑃 + 𝑇 𝑁 ) / ( 𝑇 𝑃 + 𝑇 𝑁 + 𝐹 𝑃 + 𝐹 𝑁 ) 
-- **Precision:** 𝑇 𝑃 / ( 𝑇 𝑃 + 𝐹 𝑃 ) 
-- **Recall (Sensitivity):** 𝑇 𝑃 / ( 𝑇 𝑃 + 𝐹 𝑁 ) 
-- **F1-Score:** 2 ∗ ( 𝑃 𝑟 𝑒 𝑐 𝑖 𝑠 𝑖 𝑜 𝑛 ∗ 𝑅 𝑒 𝑐 𝑎 𝑙 𝑙 ) / ( 𝑃 𝑟 𝑒 𝑐 𝑖 𝑠 𝑖 𝑜 𝑛 + 𝑅 𝑒 𝑐 𝑎 𝑙 𝑙 ) 
+- **Accuracy:** $( 𝑇 𝑃 + 𝑇 𝑁 ) / ( 𝑇 𝑃 + 𝑇 𝑁 + 𝐹 𝑃 + 𝐹 𝑁 )$ 
+- **Precision:** $ 𝑇 𝑃 / ( 𝑇 𝑃 + 𝐹 𝑃 ) $
+- **Recall (Sensitivity):** $ 𝑇 𝑃 / ( 𝑇 𝑃 + 𝐹 𝑁 ) $
+- **F1-Score:** $ 2 ∗ ( 𝑃 𝑟 𝑒 𝑐 𝑖 𝑠 𝑖 𝑜 𝑛 ∗ 𝑅 𝑒 𝑐 𝑎 𝑙 𝑙 ) / ( 𝑃 𝑟 𝑒 𝑐 𝑖 𝑠 𝑖 𝑜 𝑛 + 𝑅 𝑒 𝑐 𝑎 𝑙 𝑙 )$ 
 
 **Q8** **What is regularization in supervised learning?** 
 
