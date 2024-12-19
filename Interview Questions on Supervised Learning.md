@@ -76,10 +76,10 @@ Cross-validation is important because it helps mitigate overfitting by providing
 
  From the confusion matrix, several performance metrics can be derived, such as:
 
-- **Accuracy:** $( 𝑇 𝑃 + 𝑇 𝑁 ) / ( 𝑇 𝑃 + 𝑇 𝑁 + 𝐹 𝑃 + 𝐹 𝑁 )$ 
-- **Precision:** $𝑇 𝑃 / ( 𝑇 𝑃 + 𝐹 𝑃 )$
-- **Recall (Sensitivity):** $𝑇 𝑃 / ( 𝑇 𝑃 + 𝐹 𝑁 )$
-- **F1-Score:** $2 ∗ ( 𝑃 𝑟 𝑒 𝑐 𝑖 𝑠 𝑖 𝑜 𝑛 ∗ 𝑅 𝑒 𝑐 𝑎 𝑙 𝑙 ) / ( 𝑃 𝑟 𝑒 𝑐 𝑖 𝑠 𝑖 𝑜 𝑛 + 𝑅 𝑒 𝑐 𝑎 𝑙 𝑙 )$ 
+- **Accuracy:** ( 𝑇 𝑃 + 𝑇 𝑁 ) / ( 𝑇 𝑃 + 𝑇 𝑁 + 𝐹 𝑃 + 𝐹 𝑁 ) 
+- **Precision:** 𝑇 𝑃 / ( 𝑇 𝑃 + 𝐹 𝑃 ) 
+- **Recall (Sensitivity):** 𝑇 𝑃 / ( 𝑇 𝑃 + 𝐹 𝑁 ) 
+- **F1-Score:** 2 ∗ ( 𝑃 𝑟 𝑒 𝑐 𝑖 𝑠 𝑖 𝑜 𝑛 ∗ 𝑅 𝑒 𝑐 𝑎 𝑙 𝑙 ) / ( 𝑃 𝑟 𝑒 𝑐 𝑖 𝑠 𝑖 𝑜 𝑛 + 𝑅 𝑒 𝑐 𝑎 𝑙 𝑙 ) 
 
 **Q8** **What is regularization in supervised learning?** 
 
@@ -105,13 +105,15 @@ These techniques help create simpler models with better generalization to unseen
 
 **Ans:**
 - **Purpose**: Used for binary classification problems (yes/no, 0/1).
-- **Model**: It predicts the probability of a data point belonging to a particular class using the logistic function (sigmoid):
-  $P(y=1|X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 X_1 + \dots + \beta_n X_n)}}$
   
+- **Model**: It predicts the probability of a data point belonging to a particular class using the logistic function (sigmoid):
+
+   $P(y=1|X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 X_1 + \dots + \beta_n X_n)}}$
+
 - **Loss Function**: The loss function is **Log-Loss** (cross-entropy):
-  $
-  \text{Log-Loss} = - \frac{1}{n} \sum_{i=1}^{n} \left[ y_i \log(\hat{y_i}) + (1 - y_i) \log(1 - \hat{y_i}) \right]
-  $
+
+    $\text{Log-Loss} = - \frac{1}{n} \sum_{i=1}^{n} \left[ y_i \log(\hat{y_i}) + (1 - y_i) \log(1 - \hat{y_i}) \right]$
+
 - **Optimization**: Gradient Descent is used to minimize the log-loss.
 
 **Q12** **Explain Linear Regression**  
@@ -119,14 +121,15 @@ These techniques help create simpler models with better generalization to unseen
 **Ans:** 
 - **Purpose**: Used for regression problems where the relationship between input variables and the target variable is linear.
 - **Model**: The model assumes a linear relationship between input features $X$ and output $Y$. The equation is:
-  $$
-  Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n
-  $$
-  where $\beta$ represents the coefficients.
+
+  $Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n$
+
+   where $\beta$ represents the coefficients.
+
 - **Loss Function**: The loss function used is **Mean Squared Error (MSE)**:  
-  $$
-  MSE = \frac{1}{n}\sum_{i=1}^{n} (y_i - \hat{y_i})^2
-  $$
+  
+  $MSE = \frac{1}{n}\sum_{i=1}^{n} (y_i - \hat{y_i})^2$
+  
   where $y_i$ is the true value and $\hat{y_i}$ is the predicted value.
 - **Optimization**: Linear regression uses optimization techniques like **Gradient Descent** to minimize the loss function.
 
@@ -145,9 +148,9 @@ These techniques help create simpler models with better generalization to unseen
 - **Model**: A tree-like structure where each internal node represents a feature, each branch represents a decision based on that feature, and each leaf node represents a label or continuous value.
 - **Splitting Criteria**:
   - **Gini Impurity** for classification:
-    $$
-    Gini(t) = 1 - \sum_{i=1}^{C} p_i^2
-    $$
+    
+      $Gini(t) = 1 - \sum_{i=1}^{C} p_i^2$
+    
     where $p_i$ is the probability of class $i$ in node $t$.
   - **Mean Squared Error (MSE)** for regression.
 - **Overfitting**: Decision trees are prone to overfitting. Pruning can help by removing branches that provide little predictive power.
@@ -157,9 +160,9 @@ These techniques help create simpler models with better generalization to unseen
 **Ans:**
 - **Purpose**: Used for classification and regression tasks.
 - **Model**: SVM aims to find the hyperplane that maximizes the margin between classes in a high-dimensional space. For binary classification, the decision boundary is:
-  $$
-  f(x) = w^T x + b
-  $$
+  
+   $f(x) = w^T x + b$
+  
   where $w$ is the weight vector, $x$ is the feature vector, and $b$ is the bias term.
 - **Kernel Trick**: SVM can work in higher-dimensional spaces using kernel functions (e.g., polynomial or radial basis function) to map data into higher dimensions where classes are linearly separable.
 - **Optimization**: SVM uses convex optimization to find the hyperplane that maximizes the margin.
@@ -170,9 +173,9 @@ These techniques help create simpler models with better generalization to unseen
 - **Purpose**: A non-parametric algorithm used for classification and regression.
 - **Model**: For classification, KNN predicts the majority class among the $k$-nearest neighbors. For regression, it predicts the average of the $k$-nearest neighbors.
 - **Distance Metric**: KNN uses metrics like **Euclidean distance** to measure the distance between data points:
-  $$
-  d(x, y) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2}
-  $$
+  
+   $d(x, y) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2}$
+  
 - **Advantages**: KNN is simple, intuitive, and effective for small datasets.
 - **Disadvantages**: Computationally expensive for large datasets, as it requires calculating distances for every prediction.
 
@@ -185,43 +188,36 @@ Different types of supervised learning problems require different evaluation met
 ### a. **Classification Metrics**
 
 - **Accuracy**: The proportion of correct predictions out of all predictions:
-  $$
-  \text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
-  $$
+  
+   $\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}$
 
 - **Precision**: The proportion of positive predictions that are actually correct:
-  $$
-  \text{Precision} = \frac{TP}{TP + FP}
-  $$
+  
+  $\text{Precision} = \frac{TP}{TP + FP}$
 
 - **Recall (Sensitivity)**: The proportion of actual positives that were correctly predicted:
-  $$
-  \text{Recall} = \frac{TP}{TP + FN}
-  $$
+
+  $\text{Recall} = \frac{TP}{TP + FN}$
 
 - **F1-Score**: The harmonic mean of precision and recall:
-  $$
-  F1 = \frac{2 \times \text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
-  $$
+
+  $F1 = \frac{2 \times \text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$
 
 - **AUC-ROC**: The area under the ROC curve, which plots the True Positive Rate (Recall) against the False Positive Rate.
 
 ### b. **Regression Metrics**
 
 - **Mean Squared Error (MSE)**: The average of the squared differences between the predicted and actual values:
-  $$
-  MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y_i})^2
-  $$
+
+  $MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y_i})^2$
 
 - **Root Mean Squared Error (RMSE)**: The square root of MSE, which provides error in the same unit as the target variable:
-  $$
-  RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y_i})^2}
-  $$
+
+  $RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y_i})^2}$
 
 - **R-squared ($R^2$)**: A measure of how well the model explains the variance in the data. It is defined as:
-  $$
-  R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y_i})^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}
-  $$
+
+   $R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y_i})^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}$
 
 ---
 **Q20** What are the key assumptions of linear regression?
@@ -245,15 +241,15 @@ Different types of supervised learning problems require different evaluation met
 
 **Ans:** Regularization adds a penalty term to the loss function to prevent overfitting:
 - **L1 Regularization (Lasso)**: Adds the absolute value of coefficients to the loss:
-  $$
-  Loss = MSE + \lambda \sum |\beta_j|
-  $$
+
+   $Loss = MSE + \lambda \sum |\beta_j|$
+  
   It performs feature selection by shrinking some coefficients to zero.
   
 - **L2 Regularization (Ridge)**: Adds the squared value of coefficients to the loss:
-  $$
-  Loss = MSE + \lambda \sum \beta_j^2
-  $$
+
+  $Loss = MSE + \lambda \sum \beta_j^2$
+
   It reduces the magnitude of coefficients without setting them to zero.
   
 **Q23**  **What are some common hyperparameters in supervised learning models?**
@@ -283,14 +279,13 @@ Different types of supervised learning problems require different evaluation met
 
 **Ans:** Both are criteria used to determine splits in a decision tree:
 - **Gini Impurity**: Measures the probability of misclassifying a randomly chosen element. It is faster to compute and ranges from 0 (pure) to 0.5 (maximum impurity for binary classification).
-  $$
-  Gini = 1 - \sum_{i} p_i^2
-  $$
+
+   $Gini = 1 - \sum_{i} p_i^2$
   
 - **Entropy**: Measures the amount of information or uncertainty in a dataset. It is computationally more expensive.
-  $$
-  Entropy = -\sum_{i} p_i \log_2(p_i)
-  $$
+
+   $Entropy = -\sum_{i} p_i \log_2(p_i)$
+
   Decision trees using entropy typically yield the same results as Gini, but with a different computational cost.
 
 
@@ -344,17 +339,17 @@ Useful for evaluating binary classifiers, especially with imbalanced datasets.
 **Ans** -   
 - **L1 Regularization (Lasso)**:
   - Adds absolute values of coefficients to the loss:
-    $$
-    Loss = MSE + \lambda \sum |\beta_j|
-    $$
+
+     $Loss = MSE + \lambda \sum |\beta_j|$
+    
   - Performs feature selection by shrinking some coefficients to zero.
   - Use when you expect many irrelevant features.
 
 - **L2 Regularization (Ridge)**:
   - Adds squared values of coefficients to the loss:
-    $$
-    Loss = MSE + \lambda \sum \beta_j^2
-    $$
+  
+   $Loss = MSE + \lambda \sum \beta_j^2$
+  
   - Penalizes large coefficients without setting them to zero.
   - Use when all features are relevant but need to avoid overfitting.
 
@@ -362,7 +357,7 @@ Useful for evaluating binary classifiers, especially with imbalanced datasets.
   - Combines L1 and L2 regularization.
   - Use when you expect some irrelevant features but still need smooth regularization.
 
- 
+
 
  **Q30** **What are ensemble methods, and why do they work?**
 **Ans**:  
@@ -388,6 +383,5 @@ Gradient Boosting is an ensemble technique that builds models sequentially. Each
 
 Mathematically:
 - At each step, minimize the loss function:
-  $$
-  L(y, f(x)) = \sum_{i=1}^N \text{Loss}(y_i, f_{prev}(x_i) + \alpha h(x_i))
-  $$
+
+  $L(y, f(x)) = \sum_{i=1}^N \text{Loss}(y_i, f_{prev}(x_i) + \alpha h(x_i))$
